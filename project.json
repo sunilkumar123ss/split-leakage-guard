@@ -1,0 +1,11 @@
+{
+  "slug": "split-leakage-guard",
+  "title": "Dataset split leakage guard",
+  "description": "Audit small text datasets for duplicate IDs, normalized text shared across splits, shared groups and token-overlap near-duplicate candidates.",
+  "category": "evaluation",
+  "demo_args": [
+    "--input",
+    "example.json"
+  ],
+  "expected_exit": 1
+}
