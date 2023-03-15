@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 1 of 12. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 2 of 12. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -13,7 +13,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | Stage | Synthetic date | Change |
 | --- | --- | --- |
 | 1 | 2023-03-07T09:16:58+05:30 | Define package metadata and local artifact exclusions (present) |
-| 2 | 2023-03-15T17:11:14+05:30 | Add synthetic input fixtures and reference data (later stage) |
+| 2 | 2023-03-15T17:11:14+05:30 | Add synthetic input fixtures and reference data (present) |
 | 3 | 2023-05-12T14:45:01+05:30 | Implement normalize (later stage) |
 | 4 | 2023-06-17T17:29:19+05:30 | Implement audit (later stage) |
 | 5 | 2023-10-12T18:14:49+05:30 | Expose the command-line demonstration and input handling (later stage) |
