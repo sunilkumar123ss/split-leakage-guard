@@ -60,3 +60,24 @@ def audit(records, near_threshold=0.8, minimum_tokens=3):
                 "shared_groups": group_leaks, "near_duplicate_candidates": near}
     return {"passed": not any(findings.values()), "records": len(records), "findings": findings}
 
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", required=True)
+    args = parser.parse_args()
+    try:
+        input_path = Path(args.input)
+        if not input_path.is_absolute():
+            input_path = Path(__file__).resolve().parent / input_path
+        with input_path.open(encoding="utf-8") as handle:
+            data = json.load(handle)
+        result = audit(data["records"], data.get("near_threshold", 0.8), data.get("minimum_tokens", 3))
+        print(json.dumps(result, indent=2, allow_nan=False))
+        return 0 if result["passed"] else 1
+    except (ValueError, KeyError, TypeError, OSError) as error:
+        print(f"Invalid split audit: {error}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())
