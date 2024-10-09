@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 6 of 12. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 7 of 12. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -18,7 +18,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 4 | 2023-06-17T17:29:19+05:30 | Implement audit (present) |
 | 5 | 2023-10-12T18:14:49+05:30 | Expose the command-line demonstration and input handling (present) |
 | 6 | 2024-05-13T12:33:55+05:30 | Test unicode case and whitespace duplicate (present) |
-| 7 | 2024-10-09T15:46:36+05:30 | Test group and near duplicate (later stage) |
+| 7 | 2024-10-09T15:46:36+05:30 | Test group and near duplicate (present) |
 | 8 | 2024-11-24T18:41:24+05:30 | Test same split is not cross split leak (later stage) |
 | 9 | 2025-08-13T19:41:49+05:30 | Test duplicate id and invalid threshold (later stage) |
 | 10 | 2025-09-19T17:51:07+05:30 | Add one-command test, demonstration and CLI verification (later stage) |
