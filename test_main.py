@@ -19,3 +19,8 @@ class LeakageTests(unittest.TestCase):
         self.assertEqual(len(result["findings"]["shared_groups"]), 1)
         self.assertEqual(result["findings"]["near_duplicate_candidates"][0]["token_jaccard"], 0.6)
 
+    def test_same_split_is_not_cross_split_leak(self):
+        rows = [record("a", "same text", "train"), record("b", "same text", "train")]
+        self.assertTrue(audit(rows)["passed"])
+        self.assertTrue(audit([])["passed"])
+
