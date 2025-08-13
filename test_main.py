@@ -24,3 +24,13 @@ class LeakageTests(unittest.TestCase):
         self.assertTrue(audit(rows)["passed"])
         self.assertTrue(audit([])["passed"])
 
+    def test_duplicate_id_and_invalid_threshold(self):
+        self.assertFalse(audit([record("a", "first", "train"), record("a", "second", "train")])["passed"])
+        with self.assertRaises(ValueError):
+            audit([], float("nan"))
+        with self.assertRaises(ValueError):
+            audit([record("a", "", "test")])
+
+
+if __name__ == "__main__":
+    unittest.main()
