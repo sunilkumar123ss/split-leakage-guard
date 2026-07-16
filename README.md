@@ -1,11 +1,24 @@
 # Dataset split leakage guard
 
-> **Disclosed reconstruction prepared on 24 October 2026.** The recorded Git dates are synthetic, not dates of past development. See [HISTORY.md](HISTORY.md).
+Audit small text datasets for duplicate record IDs, normalized text shared across splits, shared speaker/customer/document groups, and token-Jaccard near-duplicate candidates. Fixture utterances and group IDs are synthetic.
 
-This is an incomplete stage in a tutorial reconstruction of an already-completed reference implementation. Source, fixtures, tests, command-line behavior and verification are introduced in later stages. Only the final branch tip contains the complete documented package.
+~~~sh
+python3 main.py --input example.json
+python3 -m unittest -v
+~~~
 
-## Intended scope of the final example
+The supplied fixture intentionally contains leakage and exits 1. Exit 0 means no findings; exit 2 means invalid input. Text normalization uses Unicode NFKC, case folding, and collapsed whitespace. Near-duplicate candidates require a configurable minimum unique-token count and threshold. Exact duplicates within one split are not flagged unless IDs repeat.
 
-Audit small text datasets for duplicate IDs, normalized text shared across splits, shared groups and token-overlap near-duplicate candidates.
+Output references row IDs and hashes rather than reproducing text. Group identifiers still appear in output. Pairwise comparison is limited to 1000 records and is quadratic. Token overlap is a heuristic, not semantic similarity; findings require review and a clean report does not prove evaluation independence.
 
-All examples are synthetic and educational. This reconstruction does not establish historical employment, deployment, usage, or production benchmarks.
+## Scope
+
+This is an educational implementation with synthetic fixtures. Run the tests and inspect the documented limits before adapting it.
+
+## Repository checks
+
+```sh
+python3 verify.py
+```
+
+This runs the isolated test suite, synthetic example, and CLI help. The included GitHub Actions workflow repeats these checks when the repository is published. No hosted CI result is claimed by the local verification report.
